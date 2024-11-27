@@ -1,0 +1,87 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Fondo oscuro y profesional */
+body {
+    background: #1a1a1a; /* Fondo oscuro */
+    color: #f5f5f5; /* Texto en gris claro */
+    font-size: 16px;
+    line-height: 1.6;
+    height: 100vh; /* Altura completa de la ventana */
+    display: flex;
+    flex-direction: column; /* Coloca elementos en columna */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Contenedor principal */
+.container {
+    background: #2c2c2c; /* Fondo oscuro pero suave */
+    border-radius: 10px;
+    padding: 40px 50px;
+    text-align: center;
+    max-width: 800px; /* Ancho máximo del contenedor */
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    position: relative; /* Posicionado relativo para centrado */
+}
+
+/* Título principal */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    color: #00e5ff; /* Azul cibernético */
+    text-shadow: 1px 1px 4px rgba(0, 229, 255, 0.7);
+    font-size: 3rem;
+    margin-bottom: 30px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Animación del título */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Estilo para centrar y ajustar la imagen */
+.centered-image {
+    display: block;
+    max-width: 30%; /* Tamaño máximo de la imagen reducido al 30% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0 auto 20px; /* Centrado horizontal y margen inferior */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra para darle un efecto visual */
+}
+
+/* Botón tecnológico */
+button {
+    background: #00e5ff; /* Azul brillante */
+    color: #1a1a1a;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: #009be0;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
